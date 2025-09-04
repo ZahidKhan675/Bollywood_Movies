@@ -1,3 +1,3 @@
 function sayHello() {
-  alert("Hello! Thanks for visiting my website 🌍");
+  alert("Hello! Thanks for visiting my website 😊");
 }
