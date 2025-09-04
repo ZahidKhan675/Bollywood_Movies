@@ -1,15 +1,15 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  text-align: center;
   margin: 0;
   padding: 0;
+  background: #f4f4f4;
+  text-align: center;
 }
 
 header {
-  background: #4CAF50;
+  background: #28a745;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 nav a {
@@ -18,18 +18,30 @@ nav a {
   margin: 0 10px;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+}
+
 button {
-  margin-top: 20px;
-  padding: 10px 15px;
-  font-size: 16px;
-  background: #4CAF50;
-  border: none;
-  border-radius: 5px;
+  background: #28a745;
   color: white;
+  border: none;
+  padding: 10px 20px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {
-  background: #45a049;
+  background: #218838;
 }
 
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  background: #222;
+  color: white;
+}
