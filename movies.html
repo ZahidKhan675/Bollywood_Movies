@@ -2,34 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Movies</title>
+  <title>Movie Trailers</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .movies-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px;
-    }
-    .movie {
-      width: 200px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
       text-align: center;
     }
-    .movie img {
-      width: 100%;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s;
+    header {
+      background: #2ecc71;
+      padding: 20px;
+      color: white;
     }
-    .movie img:hover {
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .movies-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px;
+      gap: 20px;
+    }
+    .movie {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .movie:hover {
       transform: scale(1.05);
     }
-    video {
+    .movie img {
+      width: 200px;
+      border-radius: 10px;
+    }
+    #player {
+      margin: 30px auto;
+    }
+    footer {
+      background: #333;
+      color: white;
+      padding: 15px;
       margin-top: 20px;
-      max-width: 90%;
     }
   </style>
+  <script>
+    function playTrailer(file) {
+      document.getElementById("videoPlayer").src = file;
+      document.getElementById("player").style.display = "block";
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -43,44 +74,34 @@
   </header>
 
   <main>
-    <h2>Featured Trailers</h2>
+    <h2>Latest Trailers</h2>
+
     <div class="movies-grid">
-      <!-- Movie 1 -->
-      <div class="movie">
-        <img src="poster1.jpg" alt="Movie 1 Poster" onclick="playTrailer('855389-hd_1920_1080_25fps.mp4')">
-        <p>Movie 1</p>
+      <!-- Poster 1 -->
+      <div class="movie" onclick="playTrailer('855389-hd_1920_1080_25fps.mp4')">
+        <img src="poster1.jpg" alt="Movie Poster 1">
+        <p>فلم: Demo Trailer</p>
       </div>
 
-      <!-- Movie 2 -->
-      <div class="movie">
-        <img src="poster2.jpg" alt="Movie 2 Poster" onclick="playTrailer('trailer2.mp4')">
-        <p>Movie 2</p>
-      </div>
-
-      <!-- Movie 3 -->
-      <div class="movie">
-        <img src="poster3.jpg" alt="Movie 3 Poster" onclick="playTrailer('trailer3.mp4')">
-        <p>Movie 3</p>
+      <!-- Poster 2 -->
+      <div class="movie" onclick="playTrailer('trailer2.mp4')">
+        <img src="poster2.jpg" alt="Movie Poster 2">
+        <p>فلم: Demo Trailer 2</p>
       </div>
     </div>
 
     <!-- Video Player -->
-    <video id="videoPlayer" width="640" height="360" controls>
-      <source src="855389-hd_1920_1080_25fps.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div id="player" style="display:none;">
+      <h3>Now Playing</h3>
+      <video id="videoPlayer" width="640" height="360" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 My Website</p>
   </footer>
-
-  <script>
-    function playTrailer(file) {
-      const player = document.getElementById('videoPlayer');
-      player.src = file;
-      player.play();
-    }
-  </script>
 </body>
 </html>
